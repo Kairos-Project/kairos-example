@@ -1,0 +1,18 @@
+<?import javafx.scene.layout.*?> <!-- import all default layouts -->
+
+<?import org.kairos.components.TextInputLayout?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import org.kairos.components.MaterialButton?>
+
+<VBox prefWidth="600" prefHeight="400"
+      style="-fx-background-color:white; -fx-padding:16px" spacing="8" alignment="center">
+    <TextInputLayout>
+        <TextField promptText="Username"/>
+    </TextInputLayout>
+    <TextInputLayout>
+        <PasswordField promptText="Password" />
+    </TextInputLayout>
+    <MaterialButton text="Login"/>
+
+</VBox>

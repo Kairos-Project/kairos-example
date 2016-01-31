@@ -1,0 +1,31 @@
+group 'marconi'
+version '1.0-SNAPSHOT'
+
+apply from: 'http://dl.bintray.com/content/shemnon/javafx-gradle/8.1.1/javafx.plugin'
+apply plugin:'maven'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven { url 'http://jitpack.io'}
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.github.marconi1992:kairos-framework:0.5'
+}
+
+javafx{
+    mainClass 'Main'
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
