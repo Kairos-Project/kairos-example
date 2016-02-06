@@ -10,4 +10,8 @@ public class MainActivity extends Activity {
         super.onCreate();
         setContentView(getClass().getResource("main_activity.fxml"));
     }
+
+    public void login(){
+        startActivity(AppActivity.class);
+    }
 }

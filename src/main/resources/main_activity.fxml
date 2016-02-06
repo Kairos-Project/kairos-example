@@ -13,6 +13,6 @@
     <TextInputLayout>
         <PasswordField promptText="Password" />
     </TextInputLayout>
-    <MaterialButton text="Login"/>
+    <MaterialButton text="Login" onAction="#login"/>
 
 </VBox>

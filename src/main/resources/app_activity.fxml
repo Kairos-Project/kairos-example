@@ -1,0 +1,9 @@
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import org.kairos.components.MaterialButton?>
+
+<VBox  prefWidth="800" prefHeight="600"
+      style="-fx-padding:16;" spacing="8" alignment="TOP_CENTER">
+    <Label text="Welcome"/>
+    <MaterialButton text="back" onAction="#onBackPressed"/>
+</VBox>
