@@ -25,6 +25,7 @@ public class Main extends Application {
 
         // set the material design style in your application
         stage.getScene().getStylesheets().add(MaterialButton.class.getResource("controls.css").toExternalForm());
+        stage.getScene().getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
 
         factory.startActivity(MainActivity.class); // start the activity
         stage.show();

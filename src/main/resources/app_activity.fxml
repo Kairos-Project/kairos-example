@@ -1,8 +1,10 @@
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import org.kairos.layouts.SlidingTabLayout?>
+<?import org.kairos.layouts.ViewPager?>
 <?import org.kairos.Toolbar?>
-
 <VBox xmlns:fx="http://javafx.com/fxml" prefWidth="800" prefHeight="600" spacing="8" alignment="TOP_CENTER">
-    <Toolbar fx:id="toolbar"/>
-    <StackPane id="content"/> <!--we're going to attach the fragment inside this node, then is important add it an id -->
+    <Toolbar fx:id="toolbar">
+        <SlidingTabLayout fx:id="tabLayout" />
+    </Toolbar>
+    <ViewPager fx:id="viewPager" VBox.vgrow="ALWAYS"/>
 </VBox>
