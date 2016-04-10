@@ -2,9 +2,22 @@
 <?import org.kairos.layouts.SlidingTabLayout?>
 <?import org.kairos.layouts.ViewPager?>
 <?import org.kairos.Toolbar?>
-<VBox xmlns:fx="http://javafx.com/fxml" prefWidth="800" prefHeight="600" spacing="8" alignment="TOP_CENTER">
-    <Toolbar fx:id="toolbar">
-        <SlidingTabLayout fx:id="tabLayout" />
-    </Toolbar>
-    <ViewPager fx:id="viewPager" VBox.vgrow="ALWAYS"/>
-</VBox>
+<?import org.kairos.layouts.DrawerLayout?>
+<?import javafx.scene.control.Label?>
+<DrawerLayout xmlns:fx="http://javafx.com/fxml" prefWidth="800" prefHeight="600" fx:id="drawer">
+    <content>
+        <VBox  spacing="8" alignment="TOP_CENTER">
+            <Toolbar fx:id="toolbar">
+                <SlidingTabLayout fx:id="tabLayout" />
+            </Toolbar>
+            <ViewPager fx:id="viewPager" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </content>
+    <nav>
+        <VBox style="-fx-background-color: white;">
+            <Label text="This is the nav"/>
+        </VBox>
+    </nav>
+
+
+</DrawerLayout>

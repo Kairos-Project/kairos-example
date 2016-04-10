@@ -1,11 +1,13 @@
 import fragments.AppFragment;
 import javafx.fxml.FXML;
+import org.kairos.ActionBarDrawerToggle;
 import org.kairos.FragmentStatePagerAdapter;
 import org.kairos.Toolbar;
 import org.kairos.core.Activity;
 import org.kairos.core.Fragment;
 import org.kairos.core.FragmentManager;
 import org.kairos.core.FragmentTransaction;
+import org.kairos.layouts.DrawerLayout;
 import org.kairos.layouts.SlidingTabLayout;
 import org.kairos.layouts.ViewPager;
 
@@ -22,6 +24,8 @@ public class AppActivity extends Activity{
     private SlidingTabLayout tabLayout;
     @FXML
     private ViewPager viewPager;
+    @FXML
+    private DrawerLayout drawer;
 
     @Override
     public void onCreate() {
@@ -29,9 +33,11 @@ public class AppActivity extends Activity{
         setContentView(getClass().getResource("app_activity.fxml"));
 
         toolbar.setTitle("App Activity");
-        toolbar.setDisplayHomeAsUpEnabled(true);
+        toolbar.setDisplayShowHomeEnabled(true);
 
         setActionBar(toolbar);
+
+        drawer.setDrawerListener(new ActionBarDrawerToggle(this,drawer,toolbar));
 
         ViewPagerAdapter pagerAdapter=new ViewPagerAdapter(getFragmentManager());
         viewPager.setAdapter(pagerAdapter);
