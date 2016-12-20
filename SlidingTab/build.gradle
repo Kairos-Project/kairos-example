@@ -1,0 +1,45 @@
+apply plugin: 'java'
+apply plugin: 'javafx-gradle-plugin'
+apply plugin: 'maven'
+
+sourceCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+version = '1.0.4'
+
+buildscript {
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.7.0'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+// NetBeans will automatically add "run" and "debug" tasks relying on the
+// "mainClass" property. You may however define the property prior executing
+// tasks by passing a "-PmainClass=<QUALIFIED_CLASS_NAME>" argument.
+//
+// Note however, that you may define your own "run" and "debug" task if you
+// prefer. In this case NetBeans will not add these tasks but you may rely on
+// your own implementation.
+if (!hasProperty('mainClass')) {
+    ext.mainClass = 'com.kairos.slidingtab.Main'
+}
+
+jfx {
+    // minimal requirement for jfxJar-task
+    mainClass = 'com.kairos.slidingtab.Main'
+
+    // minimal requirement for jfxNative-task
+    vendor = 'Kairos'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    compile group: 'com.github.marconi1992', name: 'kairos-framework', version:'0.5'
+}
