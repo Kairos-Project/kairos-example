@@ -1,0 +1,8 @@
+.sliding-tab-layout .bar{
+    -fx-stroke:white;
+
+}
+
+.sliding-tab-layout .button .ripple{
+    -fx-fill: white;
+}
