@@ -1,0 +1,15 @@
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+
+<?import org.kairos.components.MaterialButton?>
+<fx:root xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/8" type="org.kairos.core.Fragment">
+    <StackPane styleClass="card" prefWidth="100" style="-fx-padding:16px" fx:id="card">
+        <VBox spacing="8" alignment="TOP_CENTER">
+            <Label fx:id="label"/>
+            <HBox fx:id="controlsContainer">
+                <MaterialButton text="back" onMouseClicked="#backTransition"></MaterialButton>
+            </HBox>
+        </VBox>
+
+    </StackPane>
+</fx:root>
